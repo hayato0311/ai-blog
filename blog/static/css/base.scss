@@ -1,0 +1,43 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #f7fcfe;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  box-sizing: border-box;
+}
+
+
+
+.container {
+  display: flex;
+  flex: 1;
+
+}
+
+.center-container {
+  background-color: white;
+  max-width: 1080px;
+  width: 100%;
+  margin: 50px auto;
+  padding: 10px 0;
+  flex: 1;
+}
+
+.right-container {
+  width: 100px;
+
+}
+
+.left-container {
+  width: 100px;
+}
+
+p {
+  font-size: 20px;
+}

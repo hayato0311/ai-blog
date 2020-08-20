@@ -1,0 +1,220 @@
+.content {
+  box-sizing: border-box;
+  padding: 0 10px;
+  //code {
+  //  border: 1px solid #ddd;
+  //  background: #f6f6f6;
+  //  padding: 3px;
+  //  border-radius: 3px;
+  //  font-size: 20px;
+  //}
+  .title {
+    box-sizing: border-box;
+    padding: 0 10px;
+    margin-bottom: 50px;
+    margin-top: 30px;
+
+    h1 {
+      border-bottom: none;
+      margin: 0 20px 5px 20px;
+
+      font-size: 40px;
+    }
+    .article-info {
+      .upload-time {
+        box-sizing: border-box;
+        color: grey;
+        margin: auto 20px;
+      }
+      .tags {
+        margin: auto 20px;
+      }
+    }
+
+  }
+  .article {
+    margin: 0 20px 100px 20px;
+    padding: 0 10px;
+    h1 {
+      padding-top: 5px;
+      border-bottom: 3px solid black;
+    }
+
+    h2 {
+      padding-top: 5px;
+      border-bottom: 2px solid #000000;
+      font-size: 30px;
+    }
+    h3 {
+      padding: 0.5em; /*文字周りの余白*/
+      //color: #494949; /*文字色*/
+      background: #E0ECFF; /*背景色*/
+      border-left: solid 5px #79aec8; /*左線（実線 太さ 色）*/
+    }
+    .toc {
+      color: #668ad8; /*文字色*/
+      border: dashed 2px #668ad8; /*破線 太さ 色*/
+      background: #f1f8ff; /*背景色*/
+      padding: 0.5em;
+      max-width: 500px;
+
+      ul li, ol li {
+        line-height: 1.5;
+        padding: 0.5em 0;
+      }
+    }
+    blockquote {
+      margin: 16px 0;
+      position: relative;
+      padding: 35px 15px 10px 15px;
+      box-sizing: border-box;
+      font-style: italic;
+      background: #f5f5f5;
+      color: #777777;
+      border-left: 4px solid #9dd4ff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14);
+      &:before {
+        display: inline-block;
+        position: absolute;
+        top: 10px;
+        left: 15px;
+        content: "\f10d";
+        font-family: "Font Awesome 5 Free";
+        color: #9dd4ff;
+        font-size: 28px;
+        line-height: 1;
+        font-weight: 900;
+      }
+
+      p {
+        padding: 0;
+        margin: 7px 0;
+        line-height: 1.7;
+      }
+
+      cite {
+        display: block;
+        text-align: right;
+        color: #888888;
+        font-size: 0.9em;
+      }
+    }
+  }
+
+  .btn-contaier {
+    margin: 10px 20px;
+  }
+
+  .save-btn {
+
+    display: inline-block;
+    margin-top: 5px;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #668ad8; /*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+    &:active {
+      /*ボタンを押したとき*/
+      -webkit-transform: translateY(4px);
+      transform: translateY(4px); /*下に動く*/
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0.2); /*影を小さく*/
+      border-bottom: none;
+    }
+  }
+  .edit-remove {
+    margin: 0 30px;
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
+
+.index {
+  box-sizing: border-box;
+  margin: 0 20px 10px 20px;
+}
+
+//table {
+//  width: 100%;
+//  border-collapse: separate;
+//  border-spacing: 0;
+//
+//  th {
+//    text-align: center;
+//    color: white;
+//    background: linear-gradient(#829ebc, #225588);
+//    border-left: 1px solid #3c6690;
+//    border-top: 1px solid #3c6690;
+//    border-bottom: 1px solid #3c6690;
+//    box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.3) inset;
+//    width: 25%;
+//    padding: 10px 0;
+//
+//    &:first-child {
+//      border-radius: 5px 0 0 0;
+//    }
+//
+//    &:last-child {
+//      border-radius: 0 5px 0 0;
+//      border-right: 1px solid #3c6690;
+//    }
+//  }
+//
+//  td {
+//    text-align: center;
+//    border-left: 1px solid #a8b7c5;
+//    border-bottom: 1px solid #a8b7c5;
+//    border-top: none;
+//    box-shadow: 0px -3px 5px 1px #eee inset;
+//    width: 25%;
+//    padding: 10px 0;
+//
+//    &:last-child {
+//      border-right: 1px solid #a8b7c5;
+//    }
+//  }
+//
+//  tr:last-child td:first-child {
+//    border-radius: 0 0 0 5px;
+//  }
+//
+//  tr:last-child td:last-child {
+//    border-radius: 0 0 5px 0;
+//  }
+//
+//}
+
+table {
+  //margin:0 auto;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border: 1px solid #666;
+  border-spacing: 0;
+  overflow: hidden;
+}
+
+td, th {
+  border-bottom: 1px solid #666;
+}
+
+td, th {
+  padding: 10px;
+}
+
+th {
+  background: #bbdbf3;
+}
+
+table tbody tr:last-child th,
+table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+th + th, td {
+  border-left: 1px solid #666;
+}
+

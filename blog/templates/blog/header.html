@@ -1,0 +1,30 @@
+<nav class="header">
+    <div class="nav-items">
+
+        <div class="logo"><a class="" href="{% url 'article_list' %}">AI・機械学習</a></div>
+
+        {% if user.is_authenticated %}
+            <div class="items">
+                {% if user.is_authenticated %}
+                    <div class="item">
+                        <a href="{% url 'article_new' %}">新規投稿</a>
+                    </div>
+                    <div class="item">
+                        <a href="{% url 'article_draft_list' %}">Drafts</a>
+                    </div>
+                    <div class="item">
+                        <a href="{% url 'logout' %}">Log Out</a>
+                    </div>
+                    <div class="item username">
+                        <a href="{% url 'admin:index' %}">{{ user.username }}</a>
+                    </div>
+                    {#            {% else %}#}
+                    {#                <li><a class="" href="{% url 'login' %}"><span#}
+                    {#                        class=""></span></a></li>#}
+                {% endif %}
+
+            </div>
+        {% endif %}
+    </div>
+
+</nav>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+{% load sass_tags %}
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>AI・機械学習</title>
+    <link rel="shortcut icon" href="/media/images/blog.ico" type="image/vnd.microsoft.icon">
+    <meta http-equiv="Content-Type" content="text / html; charset = utf-8"/>
+
+    <!-- Optional theme -->
+    {#  highlight.js  #}
+    {#    <link rel="stylesheet"#}
+    {#          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/tomorrow-night-eighties.min.css">#}
+
+
+    {#  tex  #}
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+          inlineMath: [              // start/end delimiter pairs for in-line math
+              ['$', '$'],
+              ['\\(', '\\)']
+          ],
+      },
+    };
+    </script>
+    {# Medium Style Editor #}
+    {#    <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>#}
+    {#    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">#}
+
+    {# Custom CSS #}
+    <link rel="stylesheet" href="{% sass_src 'css/blog.scss' %}" type="text/css">
+
+    {# Fonts #}
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Russo+One" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/859aa3f9f3.js" crossorigin="anonymous"></script>
+    <script src="{% static 'js/header.js' %}"></script>
+
+
+</head>
+<body>
+{# header #}
+{% include 'header.html' %}
+
+{# CONTENT BLOCK #}
+
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

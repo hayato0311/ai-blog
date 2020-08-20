@@ -1,0 +1,79 @@
+{% extends 'blog/base.html' %}
+{% load markdown %}
+
+{% block content %}
+    <div class="center-container">
+        <div class="content">
+            <div class="title">
+                <h1>{{ article.title }}</h1>
+                <div class="article-info">
+                    <div class="tags">
+                        {{ article.tags|markdown_to_html|safe }}
+                    </div>
+                    {% if article.published_date %}
+                        <div class="upload-time">
+                            最終更新日：{{ article.published_date }}
+                        </div>
+                    {% else %}
+                        <div class="upload-time">
+                            下書き
+                        </div>
+                    {% endif %}
+
+                </div>
+
+
+            </div>
+            {#            <h1 class="index">目次</h1>#}
+            <div class="article">
+                {{ article.body| markdown_to_html|safe }}
+            </div>
+            {% if user.is_authenticated %}
+                <div class="edit-remove">
+                    <a class="" href="{% url 'article_edit' pk=article.pk %}">
+                        <i class="fas fa-edit fa-2x"></i>
+                    </a>
+                    <a class="" href="{% url 'article_remove' pk=article.pk %}">
+                        <i class="far fa-trash-alt fa-2x"></i>
+                    </a>
+                </div>
+
+            {% endif %}
+
+            {% if  not article.published_date %}
+                <div class="btn-contaier">
+                    <a class="save-btn" href="{% url 'article_publish' pk=article.pk %}">投稿する</a>
+                </div>
+
+            {% endif %}
+
+
+            {#        <a class="" href="{% url 'add_comment_to_article' pk=article.pk %}">Add Comment</a>#}
+
+            {#        <div class="">#}
+            {#            {% for comment in article.comments.all %}#}
+            {#                <br>#}
+            {#                {% if user.is_authenticated or comment.approved_comment %}#}
+            {#                    {{ comment.create_date }}#}
+            {#                    {% if not comment.approved_comment %}#}
+            {#                        <a class="" href="{% url 'comment_remove' pk=comment.pk %}">#}
+            {#                            <span class="glyphicon glyphicon-remove"></span>#}
+            {#                        </a>#}
+            {#                        <a class="btn btn-primary" href="{% url 'comment_approve' pk=comment.pk %}">#}
+            {#                            <span class="glyphicon glyphicon-ok"></span>#}
+            {#                        </a>#}
+            {#                    {% endif %}#}
+            {##}
+            {#                    <p>{{ comment.text|safe|linebreaks }}</p>#}
+            {#                    <p>Posted By: {{ comment.author }}</p>#}
+            {#                {% endif %}#}
+            {#            {% empty %}#}
+            {#                <p>No Comments</p>#}
+            {##}
+            {#            {% endfor %}#}
+            {##}
+            {#        </div>#}
+        </div>
+    </div>
+
+{% endblock %}
