@@ -1,25 +1,29 @@
 {% extends 'blog/base.html' %}
 {% load markdown %}
 {% block content %}
-    <div class="center-container">
-        <div class="explain">
-            <p><b>このサイトでは、統計学の基礎からディープラーニングまで幅広い範囲を扱っていきます。<br/>
-                また、トップカンファレンスに採択されている最新の研究も紹介していくので是非学習に活用してください。</b></p>
-        </div>
-
-        <div class="contents-grid">
-            {% for article in article_list %}
-                <div class="content-card">
-                    <a class="loader" href="{% url 'article_detail' pk=article.pk %}">
-                        <h2>{{ article.title }}</h2>
-                        <div class="tags">{{ article.tags|markdown_to_html|safe }}</div>
-                        {#            <div class="date">#}
-                        {#                <p>更新日: {{ post.published|date:"D M Y" }}</p>#}
-                        {#            </div>#}
-                    </a>
-                </div>
-            {% endfor %}
-        </div>
+<div class="center-container">
+    <div class="explain">
+        <p>
+            <b>このサイトでは、統計学の基礎からディープラーニングまで幅広い範囲を扱っていきます。
+{#                <br />#}
+{#                また、トップカンファレンスに採択されている最新の研究も紹介していくので是非学習に活用してください。#}
+            </b>
+        </p>
     </div>
+
+    <div class="contents-grid">
+        {% for article in article_list %}
+        <div class="content-card">
+            <a class="loader" href="{% url 'article_detail' pk=article.pk %}">
+                <h2>{{ article.title }}</h2>
+                <div class="tags">{{ article.tags|markdown_to_html|safe }}</div>
+                {#            <div class="date">#}
+                {#                <p>更新日: {{ post.published|date:"D M Y" }}</p>#}
+                {#            </div>#}
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 
 {% endblock %}
