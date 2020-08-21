@@ -2,7 +2,6 @@
 # file
 *.pyc
 backup_*
-local_settings.py
 
 # dir
 __pycache__/
